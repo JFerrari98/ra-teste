@@ -20,26 +20,45 @@ window.onload = () => {
             });
             document.querySelector("a-scene").appendChild(entity);
 
-            entity.setAttribute('material', { color: 'yellow' } );
-            entity.setAttribute('gps-new-entity-place', {
+
+            const entity2 = document.createElement("a-box");
+            entity2.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
+            entity2.setAttribute('material', { color: 'yellow' } );
+            entity2.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude,
                 longitude: e.detail.position.longitude + 0.001
             });
-            document.querySelector("a-scene").appendChild(entity);
+            document.querySelector("a-scene").appendChild(entity2);
             
-            entity.setAttribute('material', { color: 'orange' } );
-            entity.setAttribute('gps-new-entity-place', {
+            const entity3 = document.createElement("a-box");
+            entity3.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
+            entity3.setAttribute('material', { color: 'orange' } );
+            entity3.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude - 0.01,
                 longitude: e.detail.position.longitude
             });
-            document.querySelector("a-scene").appendChild(entity);
+            document.querySelector("a-scene").appendChild(entity3);
 
-            entity.setAttribute('material', { color: 'magenta' } );
-            entity.setAttribute('gps-new-entity-place', {
+            const entity4 = document.createElement("a-box");
+            entity4.setAttribute("scale", {
+                x: 20, 
+                y: 20,
+                z: 20
+            });
+            entity4.setAttribute('material', { color: 'magenta' } );
+            entity4.setAttribute('gps-new-entity-place', {
                 latitude: e.detail.position.latitude,
                 longitude: e.detail.position.longitude - 0.01
             });
-            document.querySelector("a-scene").appendChild(entity);
+            document.querySelector("a-scene").appendChild(entity4);
         }
         testEntityAdded = true;
     });
