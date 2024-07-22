@@ -19,6 +19,27 @@ window.onload = () => {
                 longitude: e.detail.position.longitude
             });
             document.querySelector("a-scene").appendChild(entity);
+
+            entity.setAttribute('material', { color: 'yellow' } );
+            entity.setAttribute('gps-new-entity-place', {
+                latitude: e.detail.position.latitude,
+                longitude: e.detail.position.longitude + 0.001
+            });
+            document.querySelector("a-scene").appendChild(entity);
+            
+            entity.setAttribute('material', { color: 'orange' } );
+            entity.setAttribute('gps-new-entity-place', {
+                latitude: e.detail.position.latitude - 0.01,
+                longitude: e.detail.position.longitude
+            });
+            document.querySelector("a-scene").appendChild(entity);
+
+            entity.setAttribute('material', { color: 'magenta' } );
+            entity.setAttribute('gps-new-entity-place', {
+                latitude: e.detail.position.latitude,
+                longitude: e.detail.position.longitude - 0.01
+            });
+            document.querySelector("a-scene").appendChild(entity);
         }
         testEntityAdded = true;
     });
